@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Permit (BP) Details</title>
+    <style>
+        /* CSS STYLES EMBEDDED HERE (Paste the EXACT same CSS as in index.html) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5; 
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #007bff; 
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin-bottom: 15px;
+            font-size: 2.2em;
+        }
+
+        /* Navigation Bar Styling */
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; 
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            margin: 5px;
+            border-radius: 20px;
+            transition: background-color 0.3s, transform 0.2s;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            background-color: #0056b3; 
+            transform: translateY(-2px); 
+        }
+
+        nav a.active {
+            background-color: #ffc107; 
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Main Content Styling */
+        main {
+            padding: 30px;
+            max-width: 1200px;
+            margin: 30px auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Home Page Sections (Not fully used here, but kept for consistency) */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #e6f2ff;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 1px solid #cce5ff;
+        }
+
+        .hero h2 {
+            color: #007bff;
+            font-size: 2em;
+            margin-top: 0;
+        }
+
+        .hero p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .info-cards {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-top: 5px solid #ffc107;
+            padding: 25px;
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            transition: box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: #007bff;
+            margin-top: 0;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 10px;
+        }
+
+        /* Subpage Specific Styles (Used in bp.html, wcp.html, etc.) */
+        .permit-overview h2 {
+            color: #007bff;
+            border-bottom: 2px solid #ffc107;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .permit-section {
+            padding: 20px;
+            margin-bottom: 25px;
+            border-left: 5px solid #007bff;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+        }
+
+        .permit-section h3 {
+            color: #007bff;
+            margin-top: 0;
+        }
+
+        .permit-section ul, .permit-section ol {
+            margin-left: 20px;
+            padding-left: 0;
+        }
+
+        .call-to-action {
+            background-color: #fff3cd; 
+            color: #856404; 
+            padding: 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            border: 1px solid #ffeeba;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Building Permit (BP)</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="bp.html" class="active">Building Permit (BP)</a>
+            <a href="wcp.html">Wood Chopping Permit (WCP)</a>
+            <a href="mp.html">Mining Permit (MP)</a>
+            <a href="sp.html">Selling Permit (SP)</a>
+            <a href="wp.html">Working Permit (WP)</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="permit-overview">
+            <h2>Overview & Purpose</h2>
+            <p>A **Building Permit** is required for any construction, alteration, or demolition of structures over a certain size. This ensures that all projects comply with zoning laws, accessibility standards, and public safety regulations.</p>
+        </section>
+
+        <section class="permit-section" id="eligibility">
+            <h3>1. Eligibility and Criteria</h3>
+            <p>All applicants must </p>
+            <ul>
+                <li>Applicant must be the registered property owner or a legally appointed agent.</li>
+                <li>All structures must maintain a minimum 10 BLOCK setback from the property line.</li>
+            </ul>
+        </section>
+
+        <section class="permit-section" id="documents">
+            <h3>2. Required Documents (List all necessary paperwork)</h3>
+            <p>Ensure applicants know exactly what documents they must submit to avoid delays in processing.</p>
+            <ol>
+                <li>Completed Application Form (BP-101, signed and dated).</li>
+                <li>Three (3) certified copies of detailed construction blueprints (1/4" scale minimum).</li>
+                <li>Proof of Property Ownership (Current Deed or Title).</li>
+                <li>Contractor's License and Insurance Information.</li>
+                <li>Site Survey Plan stamped by a licensed surveyor.</li>
+            </ol>
+        </section>
+
+        <section class="permit-section" id="steps">
+            <h3>3. Application Process Steps & Fees</h3>
+            <p>Outline the flow of the application from initial submission to final inspection and permit closure.</p>
+            <ol>
+                <li>**Pre-Application Meeting:** Recommended for complex projects.</li>
+                <li>**Submission:** Submit all documents to the City Planning Office.</li>
+                <li>**Review Period:** Expect a review time of **4-6 weeks**.</li>
+                <li>**Fee Payment:** A non-refundable application fee of $250 is due upon submission. Construction fees vary based on project value.</li>
+                <li>**Final Approval & Permit Issuance.**</li>
+            </ol>
+        </section>
+        
+        <p class="call-to-action">
+            **Important:** Building without a valid permit will result in immediate stop-work orders and significant fines.
+        </p>
+    </main>
+
+    <footer>
+        <p><a href="index.html">← Back to Home Page</a></p>
+        <p>&copy; 2024 Permits & Licensing Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>
