@@ -28,6 +28,25 @@
             font-size: 2.2em;
         }
 
+        /* Apply Button Added to Header */
+        .apply-button {
+            display: inline-block;
+            background-color: #ffc107; /* Gold/Yellow */
+            color: #333;
+            text-decoration: none;
+            padding: 10px 30px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        
+        .apply-button:hover {
+            background-color: #e0a800;
+            transform: scale(1.05);
+        }
+
         /* Navigation Bar Styling */
         nav {
             display: flex;
@@ -66,59 +85,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
-        /* Home Page Sections (Not fully used here, but kept for consistency) */
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            background-color: #e6f2ff;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            border: 1px solid #cce5ff;
-        }
-
-        .hero h2 {
-            color: #007bff;
-            font-size: 2em;
-            margin-top: 0;
-        }
-
-        .hero p {
-            font-size: 1.1em;
-            color: #555;
-        }
-
-        .info-cards {
-            display: flex;
-            justify-content: space-around;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            background-color: #ffffff;
-            border: 1px solid #ddd;
-            border-top: 5px solid #ffc107;
-            padding: 25px;
-            flex: 1;
-            min-width: 280px;
-            max-width: 350px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            border-radius: 8px;
-            transition: box-shadow 0.3s;
-        }
-        
-        .card:hover {
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .card h3 {
-            color: #007bff;
-            margin-top: 0;
-            border-bottom: 1px dashed #eee;
-            padding-bottom: 10px;
-        }
-
-        /* Subpage Specific Styles (Used in bp.html, wcp.html, etc.) */
+        /* Subpage Specific Styles */
         .permit-overview h2 {
             color: #007bff;
             border-bottom: 2px solid #ffc107;
@@ -144,6 +111,10 @@
             padding-left: 0;
         }
 
+        .permit-section strong {
+            color: #0056b3;
+        }
+
         .call-to-action {
             background-color: #fff3cd; 
             color: #856404; 
@@ -154,6 +125,16 @@
             margin-top: 20px;
             border: 1px solid #ffeeba;
         }
+        
+        .disclaimer {
+            font-size: 0.9em;
+            color: #e44d26; /* Red for emphasis */
+            margin-top: 30px;
+            padding: 10px;
+            border: 1px dashed #e44d26;
+            border-radius: 5px;
+        }
+
 
         /* Footer Styling */
         footer {
@@ -179,7 +160,7 @@
 <body>
     <header>
         <h1>Building Permit (BP)</h1>
-        <nav>
+        <a href="#application-link" class="apply-button">Apply for Permit Now</a> <nav>
             <a href="index.html">Home</a>
             <a href="bp.html" class="active">Building Permit (BP)</a>
             <a href="wcp.html">Wood Chopping Permit (WCP)</a>
@@ -191,47 +172,50 @@
 
     <main>
         <section class="permit-overview">
-            <h2>Overview & Purpose</h2>
-            <p>A **Building Permit** is required for any construction, alteration, or demolition of structures over a certain size. This ensures that all projects comply with zoning laws, accessibility standards, and public safety regulations.</p>
+            <h2>Overview & Eligibility</h2>
+            <p>The Building Permit is required for all new construction and significant external modifications. Issuance is contingent upon compliance with property dimensions and successful **Zoning Law** checks.</p>
+            
+            <p>To obtain this permit, you **must first acquire a Residency Card** from the Mangeda Government Buildings.</p>
         </section>
 
-        <section class="permit-section" id="eligibility">
-            <h3>1. Eligibility and Criteria</h3>
-            <p>All applicants must be eligible for the following criterias:</p>
-            <<ul>
-                <li>Applicant must be the registered property owner or a legally appointed agent.</li>
-                <li>All structures must maintain a minimum 10 BLOCK setback from the property line.</li>
-                <li>All applicants must make over 10 gold ingots per 10 days income.</li>
+        <section class="permit-section" id="dimensions">
+            <h3>1. Property & Structure Dimensions</h3>
+            <p>All measurements are given in **blocks**.</p>
+            <ul>
+                <li><strong>Maximum Property Line:</strong> 30 x 30 blocks (Width x Length).</li>
+                <li><strong>Maximum Property Height:</strong> 50 blocks, unless specified otherwise by the Mangeda Government.</li>
+                <li><strong>Core House Footprint:</strong> Must be built on **25 x 25 blocks**.</li>
+                <li><strong>Setback Requirement:</strong> This leaves a **five-block gap on each side**. You may build a garden in this gap, but **no property structure** is allowed.</li>
+                <li><strong>Roof Limits:</strong> The roof structure can only extend up to **28 x 28 blocks**.</li>
             </ul>
         </section>
 
-        <section class="permit-section" id="documents">
-            <h3>2. Required Documents (List all necessary paperwork)</h3>
-            <p>Ensure applicants know exactly what documents they must submit to avoid delays in processing.</p>
-            <ol>
-                <li>Completed Application Form (BP-101, signed and dated).</li>
-                <li>Three (3) certified copies of detailed construction blueprints (1/4" scale minimum).</li>
-                <li>Proof of Property Ownership (Current Deed or Title).</li>
-                <li>Contractor's License and Insurance Information.</li>
-                <li>Site Survey Plan stamped by a licensed surveyor.</li>
-            </ol>
+        <section class="permit-section" id="zoning">
+            <h3>2. Zoning Laws & Inspection</h3>
+            <ul>
+                <li><strong>Zoning Approval:</strong> One of the **Mangeda Government officials** will personally check the area you wish to build in and will issue a **Yes or No** decision.</li>
+                <li><strong>External Modifications:</strong> To make any modifications to your house on the **outside**, you require a government official to inspect the work **after** completion.</li>
+                <li><strong>Renting Property:</strong> To charge rent, you are legally required to obtain a **Selling Permit (SP)**.</li>
+            </ul>
         </section>
 
-        <section class="permit-section" id="steps">
-            <h3>3. Application Process Steps & Fees</h3>
-            <p>Outline the flow of the application from initial submission to final inspection and permit closure.</p>
-            <ol>
-                <li>**Pre-Application Meeting:** Recommended for complex projects.</li>
-                <li>**Submission:** Submit all documents to the City Planning Office.</li>
-                <li>**Review Period:** Expect a review time of **4-6 weeks**.</li>
-                <li>**Fee Payment:** A non-refundable application fee of $250 is due upon submission. Construction fees vary based on project value.</li>
-                <li>**Final Approval & Permit Issuance.**</li>
-            </ol>
+        <section class="permit-section" id="taxation">
+            <h3>3. Tax Zones & Rates</h3>
+            <p>The location of your property determines your tax rate:</p>
+            <ul>
+                <li><strong>High Tax Zone:</strong> On top of a mountain or on a separate island.</li>
+                <li><strong>Medium Tax Zone:</strong> Next to a village, in a very flat area, or near existing buildings.</li>
+                <li><strong>Low Tax Zone:</strong> On very steep hills, near forests, or inside forests.</li>
+            </ul>
         </section>
-        
-        <p class="call-to-action">
-            **Important:** Building without a valid permit will result in immediate stop-work orders and significant fines.
+
+        <p class="call-to-action" id="application-link">
+            To apply for the Building Permit, please click the **Apply for Permit Now** button located at the top of this page.
         </p>
+        
+        <div class="disclaimer">
+            **Disclaimer:** These laws are subject to change. You will be notified **10 Minecraft days** ahead of time for any changes. For any questions, please contact **AlexanderD**.
+        </div>
     </main>
 
     <footer>
